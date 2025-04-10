@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>familytrip.com</title>
+  <link rel="stylesheet" href="sty.css">
+</head>
+<body>
+
+  <!-- Header Section -->
+  <header>
+    <div class="navbar">
+      <div class="logo">
+        <h1>Family Trip</h1>
+      </div>
+      <nav>
+        <ul>
+          <li><a href="#">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="contect/contect.html">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+
+    <div class="hero-content" style="padding-bottom: 258px;">
+      <h1 id="hero">Welcome to Family Trip</h1>
+      <!-- Link to join.html instead of onclick -->
+      <a href="join.html"><button>Join us</button></a>
+    </div>
+  </header>
+
+  <!-- Services Section -->
+  <h2 style="
+  display: flex;
+  justify-content: center;
+  padding-top: 15px;
+  background-color: white;
+">Our Services</h2>
+<p style="display: flex; justify-content: center;">  In today’s fast-paced world, convenience, comfort, and reliability are not just luxuries—they're necessities.<br>
+   Whether you're hungry and looking for a quick food delivery, planning a weekend getaway, or searching for a comfortable <br>
+   during a business trip, your needs shouldn't be scattered across multiple platforms, unified platform where all your essential<br>
+   lifestyle services come together under one roof We offer secure online payment options and transparent pricing. With multiple <br>
+   gateways and flexible cancellation policies, you stay in control of your bookings. We also provide instant confirmation and detailed <br>
+   for every transaction.Hotel Reservations: Planning a holiday or business trip? Discover top-rated hotels with verified reviews, competitive<br>
+    pricing, and world-class amenities. With real-time availability and easy booking, travel planning has never been this effortless.
+
+
+  
+</p>
+  <section class="services" id="services">
+    <div class="card-container">
+      <a href="train/flight/room/room.html" style="text-decoration: none; color: inherit;">
+        <div class="card">
+          <img src="https://cdn-icons-png.flaticon.com/512/167/167707.png" alt="Room">
+          <h3>Room Booking</h3>
+          <p>Comfortable and affordable stays for your journey.</p>
+        </div>
+      </a>
+      
+      <!-- Other cards remain the same... -->
+    </div>
+  <a >
+      <div class="card">
+        <img src="https://cdn-icons-png.flaticon.com/512/1046/1046784.png" alt="Food">
+        <h3>Online Food</h3>
+        <p>Delicious meals delivered right to your room.</p>
+      </div>
+    </a>
+      <a href="train/train.html" style="text-decoration: none; color: inherit;">
+      <div class="card">
+        <img src="train.png" alt="Train">
+        <h3>Train Booking</h3>
+        <p>Book railway tickets quickly and easily.</p>
+      </div>
+    </a>
+    <a href="train/flight/flight.html" style="text-decoration: none; color: inherit;">
+      <div class="card">
+        <img src="https://cdn-icons-png.flaticon.com/512/201/201623.png" alt="Flight">
+        <h3>Flight Booking</h3>
+        <p>Fly anywhere with our affordable air tickets.</p>
+      </div>
+    </a>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section id="about">
+    <h2>About Us</h2>
+    <hr class="divider">
+
+    <div class="about-content">
+      <p>
+        Welcome to <strong>Family Trip</strong>, your One-Stop Travel & Hospitality Partner! <br><br>
+        At Family Trip, we believe that travel should be easy, enjoyable, and stress-free.
+        Whether you're planning a family vacation, a business trip, or a spontaneous weekend getaway,
+        we've got you covered! <br><br>
+      </p>
+
+      <ul>
+        <li>• <strong>Food Delivery:</strong> Fresh and delicious meals delivered right to your hotel room or travel destination.</li>
+        <li>• <strong>Room Booking:</strong> Comfortable accommodations at affordable prices.</li>
+        <li>• <strong>Train & Flight Booking:</strong> Easy and convenient ticket booking.</li>
+      </ul><br>
+
+      <p><strong>Why Choose Us?</strong></p>
+      <ul>
+        <li>✔ Easy to Use: Book everything you need in a few clicks.</li>
+        <li>✔ Affordable Prices: Best deals on hotels, transport, and meals.</li>
+        <li>✔ 24/7 Customer Support: We’re here for you, anytime.</li>
+        <li>✔ Trusted Partners: We collaborate with reliable service providers to give you the best experience.</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Footer Section -->
+  <a href="contect/contect.html"style="text-decoration: none; color: inherit;">
+  <footer id="contact">
+      <div class="contact">
+      </div>
+    </a>
+  </footer>
+  <script>
+    function verifyOTP() {
+      const otp = document.getElementById('otp').value.trim();
+      if (otp === "1234") {
+        // Redirect to home page after OTP verification
+        window.location.href = "home.html"; // change the filename as needed
+      } else {
+        alert("Incorrect OTP. Please try again.");
+      }
+    }
+  </script>
+  
+</body>
+</html>

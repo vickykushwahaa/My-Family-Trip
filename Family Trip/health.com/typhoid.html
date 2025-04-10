@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Check Your Health by One Click</title>
+  <link rel="stylesheet" href="typhoid.css">
+</head>
+<body>
+
+  <div class="container">
+    <h2>Check Your Health by One Click</h2>
+    <form id="healthForm">
+      <label for="temp">Body Temperature (°F)</label>
+      <input type="number" id="temp" placeholder="e.g. 101" required>
+
+      <label for="widal">Widal Test</label>
+      <select id="widal">
+        <option value="positive">Positive</option>
+        <option value="negative">Negative</option>
+      </select>
+
+      <label for="culture">Blood Culture</label>
+      <select id="culture">
+        <option value="positive">Positive</option>
+        <option value="negative">Negative</option>
+      </select>
+
+      <label for="wbc">WBC Count (cells/mcL)</label>
+      <input type="number" id="wbc" placeholder="e.g. 3500" required>
+
+      <label for="platelet">Platelet Count (/mcL)</label>
+      <input type="number" id="platelet" placeholder="e.g. 140000" required>
+
+      <label for="pain">Abdominal Pain</label>
+      <select id="pain">
+        <option value="yes">Yes</option>
+        <option value="no">No</option>
+      </select>
+
+      <label for="rash">Rash</label>
+      <select id="rash">
+        <option value="yes">Yes</option>
+        <option value="no">No</option>
+      </select>
+
+      <label for="fatigue">Fatigue</label>
+      <select id="fatigue">
+        <option value="yes">Yes</option>
+        <option value="no">No</option>
+      </select>
+
+      <button type="button" onclick="checkHealth()">Check Now</button>
+    </form>
+
+    <div id="result"></div>
+  </div>
+
+  <script>
+    function checkHealth() {
+      const temp = parseFloat(document.getElementById('temp').value);
+      const widal = document.getElementById('widal').value;
+      const culture = document.getElementById('culture').value;
+      const wbc = parseInt(document.getElementById('wbc').value);
+      const platelet = parseInt(document.getElementById('platelet').value);
+      const pain = document.getElementById('pain').value;
+      const rash = document.getElementById('rash').value;
+      const fatigue = document.getElementById('fatigue').value;
+
+      let result = '';
+
+      if (
+        temp >= 102 &&
+        widal === 'positive' &&
+        culture === 'positive' &&
+        wbc < 4000 &&
+        platelet < 150000 &&
+        pain === 'yes' &&
+        fatigue === 'yes'
+      ) {
+        result = "⚠ You may be experiencing symptoms of Typhoid. Please consult a doctor immediately.";
+      } else {
+        result = "✅ No signs of Typhoid detected based on input. For accurate diagnosis, consult a healthcare provider.";
+      }
+
+      document.getElementById('result').innerText = result;
+    }
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HotelHub | Book Your Stay</title>
+    <link rel="stylesheet" href="room.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo">
+                    <i class="fas fa-hotel"></i>
+                    <h1>Hotel<span>Hub</span></h1>
+                </div>
+                <ul class="nav-links">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#search">Hotels</a></li>
+                    <li><a href="#deals">Deals</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                    <li><a href="#" class="btn-login">Login</a></li>
+                </ul>
+                <div class="hamburger">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Find Your Perfect Stay</h1>
+                <p>Book hotels at the best prices across the world.</p>
+                <a href="#search" class="btn">Explore Hotels</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Search Section -->
+    <section class="search" id="search">
+        <div class="container">
+            <div class="search-box">
+                <h2>Where do you want to stay?</h2>
+                <form id="searchForm">
+                    <div class="form-group">
+                        <label for="destination">Destination</label>
+                        <input type="text" id="destination" placeholder="City, Hotel, or Area" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="check-in">Check-in</label>
+                        <input type="date" id="check-in" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="check-out">Check-out</label>
+                        <input type="date" id="check-out" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="guests">Guests</label>
+                        <select id="guests">
+                            <option value="1">1 Guest</option>
+                            <option value="2" selected>2 Guests</option>
+                            <option value="3">3 Guests</option>
+                            <option value="4">4 Guests</option>
+                            <option value="5+">5+ Guests</option>
+                        </select>
+                    </div>
+                    <button type="submit" class="btn">Search Hotels</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Hotel Listings -->
+    <section class="hotels" id="hotels">
+        <div class="container">
+            <h2>Available Hotels</h2>
+            <div class="hotel-grid" id="hotelGrid">
+                <!-- Hotels will be loaded here via JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Booking Form (Hidden Initially) -->
+    <section class="booking-form" id="bookingForm" style="display: none;">
+        <div class="container">
+            <h2>Complete Your Booking</h2>
+            <div class="booking-container">
+                <div class="hotel-summary">
+                    <h3 id="selectedHotelName"></h3>
+                    <p id="selectedHotelLocation"></p>
+                    <p id="selectedHotelDates"></p>
+                    <p id="selectedHotelPrice"></p>
+                </div>
+                <form id="guestForm">
+                    <h3>Guest Details</h3>
+                    <div class="form-group">
+                        <label for="fullName">Full Name</label>
+                        <input type="text" id="fullName" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Phone Number</label>
+                        <input type="tel" id="phone" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="specialRequests">Special Requests</label>
+                        <textarea id="specialRequests" rows="3"></textarea>
+                    </div>
+                    <div class="payment-method">
+                        <h3>Payment Method</h3>
+                        <div class="payment-options">
+                            <label>
+                                <input type="radio" name="payment" value="credit" checked> Credit Card
+                            </label>
+                            <label>
+                                <input type="radio" name="payment" value="debit"> Debit Card
+                            </label>
+                            <label>
+                                <input type="radio" name="payment" value="paypal"> PayPal
+                            </label>
+                        </div>
+                    </div>
+                    <button type="submit" class="btn">Confirm Booking</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Booking Confirmation (Hidden Initially) -->
+    <section class="confirmation" id="confirmation" style="display: none;">
+        <div class="container">
+            <div class="confirmation-box">
+                <i class="fas fa-check-circle"></i>
+                <h2>Booking Confirmed!</h2>
+                <p>Your reservation has been successfully completed.</p>
+                <div class="booking-details">
+                    <p><strong>Booking ID:</strong> <span id="bookingId"></span></p>
+                    <p><strong>Hotel:</strong> <span id="confHotelName"></span></p>
+                    <p><strong>Dates:</strong> <span id="confHotelDates"></span></p>
+                    <p><strong>Guest:</strong> <span id="confGuestName"></span></p>
+                    <p><strong>Total:</strong> <span id="confTotalPrice"></span></p>
+                </div>
+                <button class="btn" id="backToHome">Back to Home</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-about">
+                    <h3>HotelHub</h3>
+                    <p>Find the best hotels at unbeatable prices.</p>
+                </div>
+                <div class="footer-links">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#search">Hotels</a></li>
+                        <li><a href="#deals">Deals</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contact">
+                    <h3>Contact Us</h3>
+                    <p><i class="fas fa-phone"></i> +1 (123) 456-7890</p>
+                    <p><i class="fas fa-envelope"></i> support@hotelhub.com</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 HotelHub. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="room.js"></script>
+</body>
+</html>

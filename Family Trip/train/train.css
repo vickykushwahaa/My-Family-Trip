@@ -1,0 +1,490 @@
+/* Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #f5f5f5;
+    color: #333;
+    line-height: 1.6;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+/* Header Styles */
+header {
+    background-color: #1a237e;
+    color: white;
+    padding: 15px 0;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.logo i {
+    font-size: 2rem;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    gap: 20px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    padding: 5px 10px;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+}
+
+nav a:hover {
+    background-color: #303f9f;
+}
+
+nav a.active {
+    background-color: #303f9f;
+}
+
+.login-btn {
+    background-color: #ff5722;
+    padding: 8px 15px;
+}
+
+.login-btn:hover {
+    background-color: #e64a19;
+}
+
+/* Hero Section */
+.hero {
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://images.unsplash.com/photo-1506929562872-bb421503ef21?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+    background-size: cover;
+    background-position: center;
+    color: white;
+    padding: 100px 0;
+    text-align: center;
+}
+
+.hero h2 {
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+}
+
+.hero p {
+    font-size: 1.2rem;
+}
+
+/* Search Box */
+.search-container {
+    background-color: white;
+    padding: 30px 0;
+    margin-top: -50px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    position: relative;
+    z-index: 1;
+}
+
+.search-box {
+    padding: 20px;
+    background-color: #f5f5f5;
+    border-radius: 8px;
+}
+
+.search-box h3 {
+    margin-bottom: 20px;
+    color: #1a237e;
+}
+
+form {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group label {
+    margin-bottom: 8px;
+    font-weight: 500;
+    color: #333;
+}
+
+.form-group input,
+.form-group select {
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 1rem;
+}
+
+.search-btn {
+    grid-column: 1 / -1;
+    background-color: #ff5722;
+    color: white;
+    border: none;
+    padding: 12px;
+    border-radius: 4px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.search-btn:hover {
+    background-color: #e64a19;
+}
+
+/* Results Section */
+.results-container {
+    padding: 40px 0;
+}
+
+.results-container h3 {
+    margin-bottom: 20px;
+    color: #1a237e;
+}
+
+.train-list {
+    display: grid;
+    gap: 20px;
+}
+
+.train-card {
+    background-color: white;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 20px;
+    align-items: center;
+}
+
+.train-info h4 {
+    color: #1a237e;
+    margin-bottom: 5px;
+}
+
+.train-info p {
+    color: #666;
+}
+
+.train-time {
+    text-align: center;
+}
+
+.train-time p:first-child {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #333;
+}
+
+.train-time p:last-child {
+    color: #666;
+}
+
+.train-price {
+    text-align: right;
+}
+
+.train-price p:first-child {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #ff5722;
+}
+
+.train-price p:last-child {
+    color: #666;
+}
+
+.book-btn {
+    background-color: #1a237e;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.book-btn:hover {
+    background-color: #303f9f;
+}
+
+/* Booking Form */
+.booking-container {
+    padding: 40px 0;
+}
+
+.booking-container h3 {
+    margin-bottom: 20px;
+    color: #1a237e;
+}
+
+.train-info {
+    background-color: #f5f5f5;
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+.train-info h4 {
+    color: #1a237e;
+    margin-bottom: 10px;
+}
+
+.train-info p {
+    margin-bottom: 5px;
+    color: #666;
+}
+
+.passenger-details {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+
+.passenger-details h4 {
+    margin-bottom: 20px;
+    color: #1a237e;
+}
+
+.payment-method {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+
+.payment-method h4 {
+    margin-bottom: 15px;
+    color: #1a237e;
+}
+
+.payment-options {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 15px;
+}
+
+.payment-options label {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.payment-options label:hover {
+    background-color: #f5f5f5;
+}
+
+.form-actions {
+    display: flex;
+    justify-content: space-between;
+}
+
+.back-btn {
+    background-color: #757575;
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 4px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.back-btn:hover {
+    background-color: #616161;
+}
+
+.book-btn {
+    background-color: #1a237e;
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 4px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.book-btn:hover {
+    background-color: #303f9f;
+}
+
+/* Confirmation Section */
+.confirmation-container {
+    padding: 80px 0;
+    text-align: center;
+}
+
+.confirmation-box {
+    background-color: white;
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.confirmation-box i {
+    font-size: 5rem;
+    color: #4caf50;
+    margin-bottom: 20px;
+}
+
+.confirmation-box h3 {
+    font-size: 2rem;
+    margin-bottom: 15px;
+    color: #1a237e;
+}
+
+.confirmation-box p {
+    font-size: 1.1rem;
+    margin-bottom: 30px;
+    color: #666;
+}
+
+.booking-details {
+    text-align: left;
+    background-color: #f5f5f5;
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 30px;
+}
+
+.booking-details p {
+    margin-bottom: 10px;
+    font-size: 1rem;
+}
+
+.home-btn {
+    background-color: #1a237e;
+    color: white;
+    border: none;
+    padding: 12px 30px;
+    border-radius: 4px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.home-btn:hover {
+    background-color: #303f9f;
+}
+
+/* Footer */
+footer {
+    background-color: #1a237e;
+    color: white;
+    padding: 40px 0 20px;
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    margin-bottom: 30px;
+}
+
+.footer-section h4 {
+    margin-bottom: 20px;
+    font-size: 1.2rem;
+}
+
+.footer-section p {
+    margin-bottom: 15px;
+}
+
+.footer-section ul {
+    list-style: none;
+}
+
+.footer-section ul li {
+    margin-bottom: 10px;
+}
+
+.footer-section ul li a {
+    color: white;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.footer-section ul li a:hover {
+    color: #ff5722;
+}
+
+.footer-section i {
+    margin-right: 10px;
+}
+
+.footer-bottom {
+    text-align: center;
+    padding-top: 20px;
+    border-top: 1px solid #303f9f;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    header .container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    nav ul {
+        margin-top: 15px;
+        justify-content: center;
+    }
+
+    .hero {
+        padding: 80px 0;
+    }
+
+    .train-card {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    .train-time, .train-price {
+        text-align: center;
+    }
+
+    .form-actions {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .back-btn, .book-btn {
+        width: 100%;
+    }
+}

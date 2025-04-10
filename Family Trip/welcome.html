@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Welcome - Family Trip</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      background: url('https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?ixlib=rb-4.0.3&auto=format&fit=crop&w=1950&q=80') no-repeat center center fixed;
+      background-size: cover;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      color: white;
+    }
+
+    .welcome-container {
+      background-color: rgba(0, 0, 0, 0.7);
+      padding: 40px;
+      border-radius: 15px;
+      text-align: center;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+      width: 80%;
+      max-width: 400px;
+    }
+
+    .welcome-container h1 {
+      font-size: 28px;
+      margin-bottom: 20px;
+    }
+
+    .welcome-container p {
+      font-size: 16px;
+    }
+
+    .back-btn {
+      margin-top: 20px;
+      padding: 10px 20px;
+      border: none;
+      background-color: #28a745;
+      color: white;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    .back-btn:hover {
+      background-color: #218838;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="welcome-container">
+    <h1 id="welcomeMessage">Welcome!</h1>
+    <p>Thank you for joining Family Trip. Get ready for an amazing journey with us!</p>
+
+    <button class="back-btn" onclick="goHome()">Go to Home Page</button>
+  </div>
+
+  <script>
+    // Get name from URL query params
+    const urlParams = new URLSearchParams(window.location.search);
+    const userName = urlParams.get('name');
+
+    // Set personalized welcome message
+    if (userName) {
+      document.getElementById('welcomeMessage').textContent = `Welcome, ${userName}!`;
+    }
+
+    function goHome() {
+      window.location.href = "hom.html"; // or your home page
+    }
+  </script>
+
+</body>
+</html>
